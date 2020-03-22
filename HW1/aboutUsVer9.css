@@ -1,0 +1,363 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*********my design*********/
+*{
+    box-sizing: border-box;
+}
+
+body{
+  user-select: none;
+  font-family:"Century Gothic" !important;
+}
+
+body::-webkit-scrollbar { 
+	display: none !important;
+}
+
+li{
+  transition: opacity .5s;
+}
+
+.sibling-fade:hover li:not(:hover){
+  opacity: 0.5;
+}
+
+.flex-container-top{
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+#logo1{
+    margin-left: 77px;
+    width: 26px;
+    height: 23px;
+	background-image: url("img/LOGO02-01-01.png");
+	background-size: cover;
+}
+
+#logo2{
+	margin-left: 100px;
+	width: 102px;
+	height: 20px;
+	background-image: url("img/typo01-01-01.png");
+	background-size: cover;
+}
+
+#logo2 h1{
+	width: 100%;
+	height: 100%;
+	text-indent: 101%;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.flex-container-top ul > li> a{
+	transition: background-color .1s ease-in, color .1s ease-in;
+	border-radius: 5px;
+}
+
+.flex-container-top ul{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-35px);
+}
+
+#howItWork{
+	margin-left: auto;
+	text-align: center;
+	width: 180px;
+	height: 25px;
+	line-height: 25px;
+}
+
+
+#AboutUs{
+	text-align: center;
+	width: 150px;
+	height: 25px;
+	line-height: 25px;
+}
+
+#AboutUs a{
+	width: 100%;
+	height: 100%;
+	display: block;
+	font-weight: bolder;
+	color: seashell;
+	background-color: rgba(0, 0, 0, 0.4);
+	text-decoration: none;
+}
+
+#Contact{
+	text-align: center;
+	margin-right: auto;
+	width: 150px;
+	height: 25px;
+	line-height: 25px;
+	color: rgba(41, 36, 150, 1.0);
+}
+
+#howItWork a, #Contact a{
+	width: 100%;
+	height: 100%;
+	display: block;
+	color: rgba(41, 36, 150, 1.0);	
+	text-decoration: none;
+}
+
+#howItWork a:hover, #Contact a:hover{
+	font-weight: bolder;
+}
+
+#howItWork a:active, #Contact a:active{
+  color:seashell;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.sibling-hover:active a:not(:active){
+	font-weight: none !important;
+	color: rgba(41, 36, 150, 1.0) !important;
+	background-color: white !important;
+}
+
+#searchForm{
+    margin-right: 77px;
+}
+
+#searchText{
+	padding: 2px 10px;
+	color: rgba(41, 36, 150, 1.0);
+	resize: none;
+	line-height: 15px;
+	border: 1px  rgba(41, 36, 120, 1.0) solid;
+	border-radius: 20px 0px 0px 20px;
+	height: 20px;
+	overflow: hidden;
+	outline: none;
+}
+
+
+#submit{
+	border: 1px rgba(41, 36, 120, 1.0) solid;
+	border-radius: 0px 20px 20px 0px;
+	background-image: url(img/search-01-01.png);
+	background-size: cover;
+	background-position: center;
+	width: 25px;
+	height: 20px;
+	margin-left: -4.5px;
+	outline: none;
+}
+
+.first-carousel-img, .second-carousel-img, .third-carousel-img{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 372px;
+}
+.first-carousel-img{
+	background-image: url(img/Asset\ 1.png);
+}
+.second-carousel-img{
+	background-image: url(https://loremflickr.com/772/372/Japan,MRT);
+} 
+.third-carousel-img{
+	background-image: url(https://loremflickr.com/772/372/Tokyo,landscape);
+}
+
+
+#learnMore{
+    background-image: url(img/Asset\ 2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 22px;
+    box-shadow: 1px 1px 1.5px 1.5px gray;
+    width: 153px;
+    height: 46px;
+}
+#learnMore:active, #signUp:active{
+    box-shadow: 1px 1px 0.5px 0.5px gray;
+}
+
+#signUp{
+    background-image: url(img/Asset\ 3.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 22px;
+    box-shadow: 1px 1px 1.5px 1.5px gray;
+    width: 221px;
+    height: 46px;
+}
+
+.carousel-control-next{
+    width: 10% !important;
+    background-image: url(img/Asset\ 4.png);
+    background-repeat: no-repeat;
+    background-position: 25% 45%;
+    background-size: initial;
+}
+
+ol.carousel-indicators {
+   position: absolute;
+   bottom: 5px;
+   margin: 0;
+   left: 0;
+   right: 0;
+   width: auto;
+   padding-left: 10px;
+}
+
+ol.carousel-indicators{
+    position: relative;
+}
+
+ol.carousel-indicators li{
+   width: .75rem;
+   height: .75rem;
+   margin: 0;
+   border-radius: 50%;
+   border: 0;
+   background-color: gray;
+   margin-left: .5rem;
+   margin-right: .5rem;
+   transition: background-color .5s ease;
+   opacity: .5 !important;
+}
+
+.indicated {
+   background-color: rgba(0, 0, 0, 1.0) !important;
+}
+
+.flex-container-footer{
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100px;
+  position: relative;
+}
+
+.flex-container-footer ul{
+	margin-right: auto; 
+    margin-left: 77px;
+    height: 100%;
+}
+
+.flex-container-footer ul li{
+	float: left;
+	padding: 30px 0px;
+	height: 100%;
+	width: 50px;
+	margin-right: 20px;
+}
+
+.flex-container-footer ul li:nth-of-type(1){
+	width: 75px;
+}
+
+.flex-container-footer>ul>li>a{
+	display: block;
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	text-decoration: none;
+}
+#followUs{
+	text-decoration: none;
+	line-height: 40px;
+	font-weight: bold;
+	color: gray;
+}
+#fbIcon{
+	background-image: url(img/ICON-FB-01-01.png);
+}
+#twitter{
+	background-image: url(img/ICON-TWEET-01-01-01.png);
+}
+#youtube{
+	background-image: url(img/ICON-YOUTUBE-01-01-01-01.png);
+}
+
+.language{
+	margin-left: auto;
+	float: right;
+	margin-right: 77px;
+	height: 100%;
+	width: 75px;
+	padding: 30px 0px;
+}
+.language a{
+	display: block;
+	text-decoration: none;
+	color: gray;
+	line-height: 40px;
+	font-weight: bold;
+  text-decoration: none;
+  color: gray;
+}
+.language a:hover{
+  text-decoration: none;
+  color: gray;
+}
+
+.clearfix::after{
+	content: "";
+	clear: both;
+	display: block;
+}
