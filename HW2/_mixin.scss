@@ -1,0 +1,76 @@
+$themeColor1: #E56C4E;
+$themeColor2: #4080B8;
+
+@mixin bg-img($img-url){
+    background-image: url($img-url);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@mixin top-list($width){                              
+    //for top page lists
+    text-align: center;
+    width: $width;
+    height: 25px;
+    line-height: 25px;
+    background-color: white;
+}
+
+@mixin mid-sideBar($float, $borderTop, $borderRight, $borderBottom, $borderLeft, $translateX){
+    float: $float;
+    border-radius: $borderTop $borderRight $borderBottom $borderLeft;
+    height: 530px;
+    width: 530px;
+    transform: translateX($translateX);
+    position: relative;
+}
+
+@mixin mid-centerImgs($top, $height, $z-index){
+    position: absolute;
+    width: 442px;
+    left: center;
+    width: 100%;
+    top: $top;
+    height: $height;
+    z-index: $z-index;
+    background-size: initial;
+}
+
+@mixin mid-hiddenBar($translateX, $leftOrRight){
+    height: 531px;
+    width: 1108px;
+    position: absolute;
+    #{$leftOrRight}: 0px;
+    transform: translateX($translateX);
+    transition: opacity 400ms;
+}
+
+@mixin mid-hiddenBarTag($leftOrRight) {
+    width: 178px;
+    height: 446px;
+    position: absolute;
+    #{$leftOrRight}: -12%;
+    top: 6%;
+}
+
+@mixin mid-hiddenPerson($height, $width, $leftOrRight, $numOfPrev){
+    height: $height;
+    width: $width;
+    position: absolute;
+    #{$leftOrRight}: $numOfPrev;
+    bottom: 0px;
+}
+
+@mixin mid-map($leftOrRight){
+    width: 478px;
+    height: 358px;
+    position: absolute;
+    #{$leftOrRight}: 10%;
+    top: 20%;
+}
+
+@mixin mid-mapInTagPosition($left, $top){
+    left: $left;
+    top: $top;
+}

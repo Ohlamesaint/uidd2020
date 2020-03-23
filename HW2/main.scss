@@ -1,0 +1,261 @@
+@import "_mixin.scss";
+@import "_reset.scss";
+@import "_extnd.scss";
+@import "_layout.scss";
+
+$redList : "img/slideLeft/icon-a-01.svg", "img/slideLeft/icon-f-01.svg", "img/slideLeft/icon-b-01.svg", "img/slideLeft/icon-g-01.svg", "img/slideLeft/icon-c-01.svg", "img/slideLeft/icon-h-01.svg", "img/slideLeft/icon-d-01.svg", "img/slideLeft/icon-i-01.svg", "img/slideLeft/icon-e-01.svg", "img/slideLeft/icon-j-01.svg";
+$redMapTagLeftPosition : 46.9%, 53.7%, 46.9%, 21.6%, 36.8%, 21.6%, 21.6%, 93%, 60.5%, 53.7%, 46.9%, 60.5%, 60.5%;
+$redMapTagTopPosition : 90.4%, 90.4%, 69%, 47.2%, 25.7%, 69%, 90.4%, 90.4%, 69%, 69%, 4%, 25.7%, 90.4%;
+$blueList : "img/slideRight/icon01-01.svg", "img/slideRight/icon02-01.svg", "img/slideRight/icon03-01.svg", "img/slideRight/icon04-01.svg", "img/slideRight/icon05-01.svg", "img/slideRight/icon06-01.svg", "img/slideRight/icon07-01.svg", "img/slideRight/icon08-01.svg", "img/slideRight/icon09-01.svg", "img/slideRight/icon10-01.svg";
+$blueMapTagLeftPosition : 36.8%, 36.8%, 21.6%, 36.8%, 64%, 21.6%, 36.8%, 64%, 64%, 64%, 21.6%, 71%, 64%;
+$blueMapTagTopPosition : 47.2%, 69%, 25.7%, 25.7%, 69%, 90.4%, 90.4%, 4%, 90.4%, 25.7%, 69%, 69%, 47.2%; 
+
+.greeting{
+	width: 100%;
+	height: 100%;
+	padding: 10% 10% 15% 10%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 100;
+    background-color: rgba(0, 0, 0, 0.4);
+    .path{
+        fill: none !important;
+        stroke: whitesmoke;
+        stroke-width: 0.2 !important;
+    }
+}
+
+.path-line{
+	transition: opacity 1s ease-out, stroke-width 1s linear, fill 1s linear, stroke-dashoffset 2.5s ease-in-out !important;
+	stroke-width: 0;
+	opacity: 0.5;
+}
+
+.path-back{
+	opacity: 1;
+	fill: none;
+}
+
+#AboutUs, #Contact{
+    @extend %top-otherPagesLink;
+}
+
+#howItWork{
+    @extend %top-thisPageLink;
+}
+
+content{
+    .container-middle{
+        @extend %clearfix;
+        height: 530px;
+        overflow: visible;
+        position: relative;
+        transition: transform .25s ease-in;
+        #orangeBar2{
+            @include bg-img("img/slideLeft/background-01.svg");
+            @include mid-hiddenBar(-300px, left);
+        }
+        #redList{
+            @include mid-hiddenBarTag(left);
+            ul{
+                @extend %mid-hiddenBarTag--ul; 
+                li{
+                    @extend %mid-hiddenBarTag--ul--li;
+                    a{
+                        @extend %mid-hiddenBarTag--ul--li--a;
+                    }
+                    @for $i from 1 through 10{
+                        &:nth-child(#{$i}) a{
+                            @include bg-img(nth($redList, $i));
+                        }
+                    }
+                }
+            }
+        }
+        #leftRed{
+            @include mid-sideBar(left, 0px, 50%, 50%, 0px, -300px);
+            @include bg-img("img/Left-orange-01.svg");
+            margin-right: auto;
+            #goodTrip{
+                @extend %mid-popOutWord;
+                width: 178px;
+                left: 18%;
+            }
+        }
+        #redGirl{
+            @include bg-img("img/slideLeft/Orange-girl-big-01.svg");
+            @include mid-hiddenPerson(406px, 304px, right, -10%);
+            &.slideInFromRight{
+                right: 29%;
+                transition: right 2s cubic-bezier(0.2, 0.3, 0.5, 0.8);
+            }
+        }
+        .mapRed{
+            @include mid-map(left);
+            @include bg-img("img/slideLeft/floor-01.svg");
+            .outLayerRed{
+                @extend %mid-map--mapOutLayer;
+            }
+            .redTag{
+                @extend %mid-map--mapOutLayer--mapInTag;
+                @for $i from 1 to 14{
+                    &:nth-of-type(#{$i}){
+                        @include mid-mapInTagPosition(nth($redMapTagLeftPosition, $i), nth($redMapTagTopPosition, $i))
+                    }
+                }
+            }
+        }
+        #topWord{
+            @include bg-img("img/Mid-word-01.svg");
+            @include mid-centerImgs(30px, 82px, 2);
+        }
+        #mainImg{
+            @include bg-img("img/Mid-Pic-all-01.svg");
+            @include mid-centerImgs(105px, 442px, 1);
+        }
+        #rightBlue{
+            @include mid-sideBar(right, 50%, 0px, 0px, 50%, +300px);
+            @include bg-img("img/Right-blue-01.svg");
+            margin-left: auto;
+            #niceFly{
+                @extend %mid-popOutWord;
+                width: 108px;
+                right: 18%;
+            }
+        }
+        #blueBar2{
+            @include bg-img("img/slideRight/background-01.svg");
+            @include mid-hiddenBar(+300px, right);
+        }
+        #blueList{
+            @include mid-hiddenBarTag(right);
+            ul{
+                @extend %mid-hiddenBarTag--ul; 
+                li{
+                    @extend %mid-hiddenBarTag--ul--li;
+                    a{
+                        @extend %mid-hiddenBarTag--ul--li--a;
+                    }
+                    @for $i from 1 through 10{
+                        &:nth-child(#{$i}) a{
+                            @include bg-img(nth($blueList, $i));
+                        }
+                    }
+                }
+            }
+        }
+        #blueMan{
+            @include bg-img("img/slideRight/Blue-man-big-01.svg");
+            @include mid-hiddenPerson(435px, 275px, left, -20%);
+            &.slideInFromLeft{
+                left: 31%;
+                transform: rotateZ(5deg);
+                transition: left .8s cubic-bezier(0.5, 0.2, 0.5, 0.7), transform .4s cubic-bezier(0.1, 0.2, 0.3, 0.7);
+            }
+            &.rotated{
+                transform: rotateZ(0deg);
+                transition: left .3s ease-out, transform .3s cubic-bezier(0.7, 0.5, 0.1, 0.1);
+            }
+        }
+        .mapBlue{
+            @include mid-map(right);
+            @include bg-img("img/slideRight/floor-01.svg");
+            .outLayerBlue{
+                @extend %mid-map--mapOutLayer;
+            }
+            .blueTag{
+                @extend %mid-map--mapOutLayer--mapInTag;
+                @for $i from 1 to 14{
+                    &:nth-of-type(#{$i}){
+                        @include mid-mapInTagPosition(nth($blueMapTagLeftPosition, $i), nth($blueMapTagTopPosition, $i))
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.manShake{
+	animation-name: manRotate;
+	animation-duration: 1s;
+}
+@keyframes manRotate{
+	25%{
+		transform: rotate(-3deg);
+	}
+	50%{
+		transform: rotate(3deg);
+	}
+	75%{
+		transform: rotate(-3deg);
+	}
+	100%{
+		transform: rotate(0deg);
+	}
+}
+.show-tag{
+	z-index: 99;
+	animation-name: drop;
+	animation-duration: 1s;
+}
+@keyframes drop{
+	0%{
+		transform: translateY(-70px);
+		opacity: 0;
+	}
+	10%{
+		transform: translateY(-60px);
+	}
+	20%{
+		transform: translateY(-45px);
+	}
+	30%{
+		transform: translateY(0px);
+	}
+	50%{
+		transform: translateY(-15px);
+	}
+	70%{
+		transform: translateY(0px);
+	}
+	80%{
+		transform: translateY(-5px);
+	}
+	90%{
+		transform: translateY(0px);
+	}
+	95%{
+		transform: translateY(-3px);
+	}
+	100%{
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+.hide-tag{
+	opacity: 0;
+	z-index: 0;
+	transition: opacity 400ms;
+}
+
+.show-imme{
+	opacity: 1;
+	z-index: 99;
+}
+.hide-imme{
+	opacity: 0;
+	z-index: 0;
+}
+.show {
+	opacity: 1;
+	transition: opacity 400ms;
+	z-index: 99;
+}
+.hide {
+	opacity: 0;
+	z-index: 0;
+	transition: opacity 400ms;
+}

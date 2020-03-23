@@ -1,0 +1,135 @@
+%h1-hide{
+    text-indent: 101%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+%top-listLink{                          
+    //for top page listsLink
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-decoration: none;
+    transition: background-color .1s ease-in, color .1s ease-in;
+    border-radius: 5px;
+}
+
+%top-otherPagesLink{                         
+    //for otherpage link 
+    color: rgba(41, 36, 150, 1.0);	
+    background-color: white;
+    &:hover{
+        font-weight: bolder;
+    }
+    &:active{
+        color:seashell;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+}
+
+%top-thisPageLink{
+    //for this page  其實應該屬於layout??
+    font-weight: bolder;
+    color: seashell;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+%mid-popOutWord{
+    position: absolute;
+    height: 174px;
+    top: 35%;
+    font-weight: bolder;
+    line-height: 43px;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+%mid-hiddenBarTag--ul{
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+%mid-hiddenBarTag--ul--li{
+    float: left;
+    width: 89px;
+    height: 89px;
+    padding: 7.5px;
+    transition: padding .2s;
+    &:hover{
+        padding: 0px;
+    }
+}
+
+%mid-hiddenBarTag--ul--li--a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    &:hover{
+        box-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+        outline: none;
+        text-decoration: none;
+        transform: rotate(2deg);
+        transition: transform .2s;
+    }
+}
+
+
+
+%mid-map--mapOutLayer{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+%mid-map--mapOutLayer--mapInTag{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+}
+
+%bottom-flex-container-footer--ul--li--a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-decoration: none;
+}
+
+%bottom-helpButton{
+    margin: auto;
+	width: 257px;
+	height: 46px;
+	position: absolute;
+	top: 28px;
+	left: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 30px;
+	color: white;
+	font-weight: bold;
+	box-shadow: 1px 1px 1px 1px gray;
+    cursor: pointer;
+    &:active{
+        box-shadow: .5px .5px .5px .5px gray;
+    }
+}
+
+%bottom-linkStyle{
+    display: block;
+	text-decoration: none;
+	color: gray;
+	line-height: 40px;
+	font-weight: bold;
+}
+
+%clearfix{
+    content: "";
+    display: block;
+    clear: both;
+}

@@ -1,0 +1,220 @@
+*{
+    box-sizing: border-box;
+}
+
+
+
+*:focus{
+    outline:none;
+}
+
+body{
+    user-select: none;
+    font-family:"Century Gothic",arial,sans-serif;
+    position: relative;
+    &::-webkit-scrollbar{
+        display: none !important;
+    }
+}
+
+li{
+    transition: opacity .5s;
+}
+
+header{
+    .flex-container-top{
+        height: 80px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        #logo1{
+            margin-left: 77px;
+            width: 26px;
+            height: 23px;
+            @include bg-img("img/LOGO02-01.svg");
+        }
+        #logo2{
+            margin-left: 100px;
+            width: 102px;
+            height: 20px;
+            @include bg-img("img/typo01-01.svg");
+            h1{
+                @extend %h1-hide;
+            }
+        }
+        ul{
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(-35px);
+            #howItWork{
+                @include top-list(180px);
+                a{
+                    @extend %top-listLink;
+                    @extend %top-thisPageLink;
+                }
+            }
+            #AboutUs{
+                @include top-list(150px);
+                a{
+                    @extend %top-listLink;
+                    @extend %top-otherPagesLink;
+                }
+            }
+            #Contact{
+                @include top-list(150px);
+                a{
+                    @extend %top-listLink;
+                    @extend %top-otherPagesLink;
+                }
+            }
+        }
+        #searchForm{
+            margin-right: 77px;
+            #searchText{
+                padding: 2px 10px;
+                color: rgba(41, 36, 150, 1.0);
+                resize: none;
+                line-height: 15px;
+                border: 1px  rgba(41, 36, 120, 1.0) solid;
+                border-radius: 20px 0px 0px 20px;
+                height: 20px;
+                overflow: hidden;
+                outline: none;
+                font-family: inherit;
+                font-size: inherit;
+                white-space: pre-wrap;
+                text-indent: .5px;
+                text-align: start;
+            }
+            #submit{
+                border: 1px rgba(41, 36, 120, 1.0) solid;
+                border-radius: 0px 20px 20px 0px;
+                width: 25px;
+                height: 20px;
+                margin-left: -4.5px;
+                outline: none;
+                @include bg-img("img/search-01.svg")
+            }
+        }
+    }
+}
+
+footer{
+    .flex-container-footer{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        position: relative;
+        .help{
+            margin-right: auto;
+            float: left;
+            margin-left: 77px;
+            height: 100%;
+            width: 33px;
+            padding: 30px 0px;
+            &.hide-div{
+                display: none;
+                opacity: 0;
+                transform: opacity 400ms;
+            }
+            a{
+                @extend %bottom-linkStyle;
+            }
+        }
+        ul{
+            margin-right: auto; 
+            margin-left: 77px;
+            height: 100%;
+            li{
+                float: left;
+                padding: 30px 0px;
+                height: 100%;
+                width: 50px;
+                margin-right: 10px;
+                &:nth-of-type(1){
+                    width: 75px;
+                }
+                #followUs{
+                    @extend %bottom-flex-container-footer--ul--li--a;
+                    line-height: 40px;
+                    font-weight: bold;
+                    color: gray;
+                }
+                #fbIcon{
+                    @extend %bottom-flex-container-footer--ul--li--a;
+                    @include bg-img("img/ICON-FB-01.svg");
+                    background-size: initial;
+                }
+                #twitter{
+                    @extend %bottom-flex-container-footer--ul--li--a;
+                    @include bg-img("img/ICON-TWEET-01-01.svg");
+                    background-size: initial;
+                }
+                #youtube{
+                    @extend %bottom-flex-container-footer--ul--li--a;
+                    @include bg-img("img/ICON-YOUTUBE-01-01-01.svg");
+                    background-size: initial;
+                }
+            }
+        }
+        .selectBar{
+            @include bg-img("img/below-bar-01.svg");
+            background-size: contain;
+            margin: auto;
+            width: 235px;
+            height: 45px;
+            position: absolute;
+            top: 28px;
+            left: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 98;
+            #selector{
+                @include bg-img("img/Question-Mark-bar-01.svg");
+                width: 40px;
+                height: 40px;
+                opacity: 0.5;
+                transition: opacity .25s ease-in-out, margin-left .3s ease-out;
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
+        }
+        .redHelpButton{
+            @extend %bottom-helpButton;
+            background-color: $themeColor1;
+        }
+        .blueHelpButton{
+            @extend %bottom-helpButton;
+            background-color: $themeColor2;
+        }
+        .language{
+            margin-left: auto;
+            float: right;
+            margin-right: 77px;
+            height: 100%;
+            width: 75px;
+            padding: 30px 0px;
+            a{
+                @extend %bottom-linkStyle;
+            }
+        }
+    }
+}
+
+
+.sibling-hover:active a:not(:active){		
+    font-weight: none !important;
+    color: rgba(41, 36, 150, 1.0) !important;
+    background-color: white !important;
+}
+.sibling-fade:hover li:not(:hover){
+    opacity: 0.5;
+}
